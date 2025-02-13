@@ -1,25 +1,35 @@
 //! Problem 1
 
-const age = 12 ;
-const message = age > 18 ? "You are good to go" : "Sorry! you must be 18 or older"
+const age = (x) => {
+    return (message = x > 18 ? "You are good to go" : "Sorry! you must be 18 or older")
 
-console.log(message)
+}
+console.log(age(17))
+
     
 
 //! Problem 2
 
-const is_raining = true ;
-is_raining ? console.log("Get you rain Jacket!") : console.log("No rain on today's forecast")
+const is_raining = (val) => {
+    return val ? "Get you rain Jacket!" : "No rain on today's forecast"
+}
+
+console.log(is_raining(true))
 
 //! Problem 3
 
-const num = 25 ;
-num % 2 === 0 ? console.log("This is an even number") : console.log("This is an odd Number")
+const num = (n) => {
+    return n % 2 === 0 ? "This is an even number" : "This is an odd Number"
+}
+
+console.log(num(5))
 
 //! Problem 4
 
-const a = 20;
-const b = 21 ;
-a > b ? console.log("a is greater than b") : console.log("a is less than b")
+const compareTwoVar = (a,b) => {
+    return a > b ? `${a} is bigger than ${b}` : `${a} is less than ${b}`;
+
+}
+console.log(compareTwoVar(5,12))
 
 

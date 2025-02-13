@@ -31,7 +31,7 @@ console.log("ARRAYS WITH ID DIVIDED BY 3")
 console.log(array3)
 
 // Arrays with "fire" type
-const fire = pokemon.filter(p =>p.types.includes("fire"))
+const fire = pokemon.filter(p =>p.types[0]=== ("fire") || p.types[1] === ("fire"))
 console.log("ARRAYS WITH FIRE TYPE")
 console.log(fire)
 
@@ -61,7 +61,7 @@ console.log("SECOND TYPE IS FLYING")
 console.log(flyingType)
 
 // acount of the number of pokémon that are "normal" type
-const normalType = pokemon.filter(p =>p.types.includes("normal")).length;
+const normalType = pokemon.filter(p =>p.types[0]===("normal") || p.types[1]===("normal") ).length;
 console.log("NUMBER OF TYPE NORMAL")
 console.log(normalType)
 
