@@ -5,7 +5,7 @@ const TodoForm = (props) => {
     const { addTask } = props
     const [task, setTask] = useState("")
     const [errortask , setErrorTask] = useState("")
-    const [finishedTask , setFinishedTask] = useState(false)
+    //const [finishedTask , setFinishedTask] = useState([])
 
     const handleTaskName = (e) => {
         setTask(e.target.value)
@@ -17,6 +17,11 @@ const TodoForm = (props) => {
             setErrorTask("")
         }
     }
+
+    //const handleFinishedTask = (e) => {
+        //setFinishedTask(e.target.checked)
+
+    //}
 
     
 
@@ -38,6 +43,7 @@ const TodoForm = (props) => {
                     <input type="text" className='form-control' value={task} placeholder='What is your Task?' onChange={handleTaskName} />
                     {errortask ? <p className='text-danger text-center'>{errortask}</p> : "" }
                 </div>
+
             </div>
             <input type="submit" value="Add Task" className='btn btn-primary mt-2 col-sm-2' />
 

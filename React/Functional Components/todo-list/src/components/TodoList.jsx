@@ -2,36 +2,44 @@ import React from 'react'
 import { useState } from 'react';
 
 const TodoList = (props) => {
-    const {tasks , deleteTask} = props ;
-    const [finishedTask , setFinishedTask] = useState(false)
+    const {tasks , deleteTask , handleCheckBox} = props ;
+    const [finishedTask , setFinishedTasks] = useState(false)
 
-    const handleFinishedTask = (e) => {
-        setFinishedTask(e.target.checked)
-
-    }
+    
     
 
 
     return (
-        <div className='container mt-4'>
-            <div>
-                {
-                    tasks.map((oneTask , index) => {
-                        return (
-                            <div key={index} className='d-flex justify-content-between align-items-center'>
-                                <div className='d-flex gap-2'>
-                                    <p>{oneTask.task} </p>
-                                </div>
-                                <button className='btn btn-danger' onClick={() => deleteTask(index)}>Delete</button>
-                            </div>
-                        )
+        <div className="card-body">
+        {tasks.map((oneTask, index) => (
+          <div
+            key={index}
+            className="d-flex justify-content-between align-items-center mb-3"
+          >
+            <p
+              style={{
+                margin: "0 10px",
+                textDecoration: oneTask.isChecked ? "line-through" : "none",
+              }}
+            >
+              {oneTask.task}
+            </p>
 
-                    })
-                }
-            </div>
+            <input
+              type="checkbox"
+              checked={oneTask.isChecked}
+              onChange={(e) => handleCheckBox(index)}
+            />
+            <button
+              className="btn btn-danger"
+              onClick={() => deleteTask(index)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
         </div>
-            
     )
 }
-
+                            
 export default TodoList
