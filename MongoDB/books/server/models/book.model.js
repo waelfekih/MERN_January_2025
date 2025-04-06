@@ -7,6 +7,12 @@ const BooksSchema = new Schema(
             minlength: [2, "Title must be at least 2 characters long!"],
             maxlength: [255, "Title must be less than 255 characters long"]
         },
+        publicationDate : {
+            type: Date ,
+            required: [true, "Date is required!"]
+
+
+        },
         author: {
             type: String,
             required: [true, "Author is required!"],
